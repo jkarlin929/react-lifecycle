@@ -1,25 +1,30 @@
 ---
-title: Title
+title: React, State, and Lifecycle Methods
 type: lesson
 duration: "2:30"
 creator:
-    name: J Silverstein
+    name: Vince Abruzzo
+    modified by: J Silverstein
     city: NY
 competencies: Programming
 ---
 
 
-# Title of lecture!
+# React, State, and Lifecycle Methods
 
 ### Learning Objectives
 
-- One
-- Two
-- Three
+- Explain React state
+- Describe the React component lifecycle
+- Explain the most important lifecycle methods
+- Implement a react component that fetches some data from the web
+- Discuss React events
 
-# Topic 1
+# React State
 
-[stuff]
+![state](./assets/state.jpg)
+
+State is an object that React watches to decide when to update the DOM.
 
 ## 🚀 Lab 1
 
