@@ -126,18 +126,20 @@ addAnotherMovie() {
 
 (This is also helpful if you have a complex object in your state.)
 
-![state](./assets/state.jpg)
-
-`state` is an object that React watches to decide when to update the DOM.
-
 ## 🚀 Lab 1
 
-[stuff]
+[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U03_D04_Color-Div) 
 
-# Topic 2
+You can work in pairs for this one, provided by our handy scrambler.
+
+# React Lifecycle Methods
 
 [stuff]
 
 ## 🚀 Lab 2
 
 # Recap!
+
+![state](./assets/state.jpg)
+
+`state` is an object that React watches to decide when to update the DOM.
