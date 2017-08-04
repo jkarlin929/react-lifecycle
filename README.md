@@ -51,7 +51,7 @@ constructor() {
     return (
       <div>
         <h1>Hello, world!</h1>
-        <h2>The title is {this.state.title}.</h2>
+        <div>The title is {this.state.title}.</div>
       </div>
     );
   }
@@ -99,9 +99,19 @@ class MovieDiv extends Component {
 
 (Note that we have to use `bind` to preserve the context of `this`.)
 
+### VERY IMPORTANT: How _not_ to update `state`
+
+Never, ever, ever, _ever_ update `state` by saying something like:
+
+```js
+this.state.title = 'Finding Nemo';
+```
+
+Instead, you **MUST USE** the `setState` method
+
 ![state](./assets/state.jpg)
 
-State is an object that React watches to decide when to update the DOM.
+`state` is an object that React watches to decide when to update the DOM.
 
 ## 🚀 Lab 1
 
