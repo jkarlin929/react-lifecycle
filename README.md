@@ -12,6 +12,14 @@ competencies: Programming
 
 # React, State, and Lifecycle Methods
 
+### Prerequisites
+
+Students should be familiar with:
+
+- React and React components
+- Props and unidirectional data flow
+- The immutability of props
+
 ### Learning Objectives
 
 - Explain React state
@@ -21,6 +29,73 @@ competencies: Programming
 - Discuss React events
 
 # React State
+
+- **Props** are properties that one component passes to one of its child components. They only go in one direction, and they are _immutable_. 
+- **State** allows us to add dynamic content to our components. Components can have local state that we can **set**. Every time a component's state changes, the component will re-render.
+
+We declare state in our constructor, like this:
+
+```jsx
+import React, { Component } from 'react';
+
+class MovieDiv extends Component {
+constructor() {
+    super();
+    this.state = {
+      title: null,
+      releaseDate: null,
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>The title is {this.state.title}.</h2>
+      </div>
+    );
+  }
+}
+```
+
+We update `state` with the built-in method `setState`. So, if we wanted to update the title in our `MovieDiv` component, we would say:
+
+```jsx
+this.setState({ title: 'Finding Nemo' });
+```
+
+Let's add this to a function in our `MovieDiv`.
+
+```jsx
+import React, { Component } from 'react';
+
+class MovieDiv extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: null,
+      releaseDate: null,
+    };
+    this.updateTitle = this.updateTitle.bind(this);
+  }
+
+  updateTitle() {
+    this.setState({
+      title: 'Finding Nemo';
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Hello, world!</h1>
+        <h2>The title is {this.state.title}.</h2>
+        <button onClick={this.updateTitle}>Update!</button>
+      </div>
+    );
+  }
+}
+```
 
 ![state](./assets/state.jpg)
 
