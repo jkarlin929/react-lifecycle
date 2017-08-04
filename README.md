@@ -81,7 +81,7 @@ class MovieDiv extends Component {
 
   updateTitle() {
     this.setState({
-      title: 'Finding Nemo';
+      title: 'Finding Nemo',
     })
   }
 
@@ -107,7 +107,24 @@ Never, ever, ever, _ever_ update `state` by saying something like:
 this.state.title = 'Finding Nemo';
 ```
 
-Instead, you **MUST USE** the `setState` method
+Instead, you **MUST USE** the `setState` method, like we did above.
+
+```js
+this.setState({ title: 'Finding Nemo' });
+```
+
+We can also take a copy of the state object using _spread syntax_. For example, let's say instead of a string, the `title` property is an array: `[<h2>Star Wars</h2>, <h2>Finding Nemo</h2>]`. We want a new method that will add `Back to the Future` onto this array. In order to do this, we'll do something like this:
+
+```jsx
+addAnotherMovie() {
+  const state = {...this.state};
+  state.title.push(<h2>Back to the Future</h2>);
+  this.setState(state);
+}
+
+```
+
+(This is also helpful if you have a complex object in your state.)
 
 ![state](./assets/state.jpg)
 

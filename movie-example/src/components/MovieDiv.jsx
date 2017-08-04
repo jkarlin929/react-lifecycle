@@ -13,14 +13,14 @@ class MovieDiv extends Component {
 
   updateMovie() {
     this.setState({
-      title: [<h2>Hello World</h2>, <h2>Finding Nemo</h2>],
+      title: [<h2>Star Wars</h2>, <h2>Finding Nemo</h2>],
     })
   }
 
   addAnotherMovie() {
     const state = {...this.state};
     state.title.push(<h2>Back to the Future</h2>);
-    this.setState({ state });
+    this.setState( state );
   }
 
   render() {
