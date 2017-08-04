@@ -97,6 +97,8 @@ class MovieDiv extends Component {
 }
 ```
 
+(Note that we have to use `bind` to preserve the context of `this`.)
+
 ![state](./assets/state.jpg)
 
 State is an object that React watches to decide when to update the DOM.
