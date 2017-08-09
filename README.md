@@ -1,15 +1,3 @@
----
-title: React, State, and Lifecycle Methods
-type: lesson
-duration: "2:30"
-creator:
-    name: Vince Abruzzo
-    modified by: J Silverstein
-    city: NY
-competencies: Programming
----
-
-
 # React, State, and Lifecycle Methods
 
 ### Prerequisites
