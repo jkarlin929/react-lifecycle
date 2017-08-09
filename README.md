@@ -225,8 +225,9 @@ Let's separate the movie title div out into its own component and add some lifec
 
 ```js
   
-  componentWillReceiveProps() {
+  componentWillReceiveProps(props) {
     console.log('subcomponent will receive props');
+    console.log(props);
   }
 
   componentWillUpdate() {
@@ -244,9 +245,39 @@ Now when we run our movies app and make changes, we can see at what point each l
 
 If you need to fetch data when the component loads, you'd do it in the `componentDidMount` lifecycle methods. This ensures that the component loads quickly, without waiting for data -- for example, if the request loads slowly.
 
-[stuff]
+Let's add an API call to our movie example:
+
+In `App.js`:
+
+```js
+componentDidMount() {
+  axios.get('http://batman-info.herokuapp.com/api/batman')
+    .then(res => {
+      const batmanTitles = res.data.Search.map(movie => {
+        return <h2>{movie.Title}</h2>;
+      });
+      this.setState({
+        batmanList: batmanTitles,
+      })
+    })
+}
+```
+
+Then we can use that data in the component's render method.
+
+### Another example fetching data using lifecycle methods
+
+Let's say we wanted to add the NASA pic of the day to our NASA widget. What are some ways we could go about doing that? Where could we make that call? There are a couple of different ways to do this:
+
+- Load the NASA data as soon as the app mounts (`componentDidMount`)
+- Load the NASA data when the NASA button is clicked and pass it to the child component (`componentDidUpdate`)
+- Load the NASA data in the child component when its prop `widgetType` is `'NASA'` (`componentWillReceiveProps`)
 
 ## 🚀 Lab 2
+
+[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U03_D04_Star-Wars)
+
+You'll be working in pairs again for this, provided by our handy scrambler.
 
 # Recap!
 

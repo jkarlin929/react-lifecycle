@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 
 class TheMovie extends Component {
   
-  componentWillReceiveProps() {
+  componentWillReceiveProps(props) {
     console.log('subcomponent will receive props');
+    console.log(props);
   }
 
   componentWillUpdate() {
