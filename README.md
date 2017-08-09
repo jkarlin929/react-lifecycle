@@ -283,4 +283,13 @@ You'll be working in pairs again for this, provided by our handy scrambler.
 
 ![state](./assets/state.jpg)
 
-`state` is an object that React watches to decide when to update the DOM.
+- `state` is an object that React watches to decide when to rerun the `render` method.
+- Every time `state` changes, unless we specifically tell it not to, the component will re-render.
+- We change `state` by using the `setState` method that React provides us.
+- The page does not refresh when `state` changes.
+
+![lifecycle](./assets/component-lifecycle.png)
+
+- Lifecycle methods describe the flow of a react component's existence.
+- Sometimes we can call `setState` within lifecycle methods and not trigger a re-render. This occurs during cycles where the `render` method is already present within the cycle, such as `componentDidUpdate` and `componentWillReceiveProps`.
+- If we want data to initially be present when our app loads, we should make that call within `componentDidMount`
