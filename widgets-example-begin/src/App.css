@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+}
+
+.widget-container {
+  display: flex;
+  align-items: space-between;
+  margin: 15px;
+}
+
+.widget {
+  flex: 1;
+  border: 1px solid #ddd;
+  margin: 10px;
+  min-height: 100px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.happy {
+  background-color: lightgoldenrodyellow;
+}
+
+.sad {
+  background-color: lightblue;
+}
+
+.NASA {
+  background-color: lightseagreen;
+}
+
+.generic {
+  background-color: #eee;
+}
