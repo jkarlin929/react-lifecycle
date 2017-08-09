@@ -138,6 +138,10 @@ addAnotherMovie() {
 }
 ```
 
+### Let's make another example!
+
+
+
 ## 🚀 Lab 1
 
 [Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U03_D04_Color-Div) 
@@ -148,29 +152,97 @@ You can work in pairs for this one, provided by our handy scrambler.
 
 ![lifecycle Methods](./assets/lifecycle.png)
 
-Lifecycle methods describe the timeline of a React component's existence. They allow us to do things based on how the page loads. Let's add a couple of lifecycle methods to our movies example:
+Lifecycle methods describe the timeline of a React component's existence. They allow us to do things based on how the page loads. Let's add a lifecycle method to our movies example:
 
 ```js
-componentWillMount() {
-  console.log('will mount');
-}
+class MovieDiv extends Component {
+  constructor() {
+    super();
+    this.state = {
+      title: null,
+      releaseYear: null,
+    };
+    this.updateMovie = this.updateMovie.bind(this);
+    this.addAnotherMovie = this.addAnotherMovie.bind(this);
+  }
 
-componentDidMount() {
-  console.log('did mount');
-}
+  componentDidMount() {
+    console.log('did mount');
+  }
 
-componentWillUpdate() {
-  console.log('will update');
-}
+  updateMovie() {
+    this.setState({
+      title: [<h2>Star Wars</h2>, <h2>Finding Nemo</h2>],
+    });
+  }
 
-componentDidUpdate() {
-  console.log('did update');
+  addAnotherMovie() {
+    console.log(this.state);
+    const state = { ...this.state };
+    state.title.push(<h2>Back to the Future</h2>);
+    this.setState(state);
+  }
+
+  render() {
+    console.log('render');
+    return (
+      <div className="movie-info">
+        <h2>Welcome to my movie app!</h2>
+        <h2>The title is {this.state.title}.</h2>
+        <button onClick={this.updateMovie}>Update Movie</button>
+        <button onClick={this.addAnotherMovie}>Add Movie</button>
+      </div>
+    );
+  }
 }
 ```
 
+Let's add a few more lifecycle methods:
+
+```js
+  componentWillMount() {
+    console.log('will mount');
+  }
+
+  componentDidMount() {
+    console.log('did mount');
+  }
+
+  componentWillUpdate() {
+    console.log('will update');
+  }
+
+  componentDidUpdate() {
+    console.log('did update');
+  }
+```
+
+Now every time we start the app, the `componentDidMount` method fires.
+
+#### NOTE: In your react classes, the constructor should appear up top, followed by lifecycle methods, then your own methods, then the render method. This is a best practice.
+
 Let's separate the movie title div out into its own component and add some lifecycle methods to it as well.
 
+```js
+  
+  componentWillReceiveProps() {
+    console.log('subcomponent will receive props');
+  }
 
+  componentWillUpdate() {
+    console.log('subcomponent will update');
+  }
+
+  componentDidUpdate() {
+    console.log('subcomponent did update');
+  }
+```
+
+Now when we run our movies app and make changes, we can see at what point each lifecycle method is fired.
+
+### Fetching data within a React component
+
+If you need to fetch data when the component loads, you'd do it in the `componentDidMount` lifecycle methods. This ensures that the component loads quickly, without waiting for data -- for example, if the request loads slowly.
 
 [stuff]
 

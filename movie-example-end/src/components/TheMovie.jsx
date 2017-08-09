@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 
 class TheMovie extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   componentWillReceiveProps() {
     console.log('subcomponent will receive props');
   }
