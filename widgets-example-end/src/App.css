@@ -2,23 +2,33 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.widget-container {
+  display: flex;
+  align-items: space-between;
+  margin: 15px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.widget {
+  flex: 1;
+  border: 1px solid #ddd;
+  margin: 10px;
+  min-height: 100px;
   padding: 20px;
-  color: white;
+  box-sizing: border-box;
 }
 
-.App-intro {
-  font-size: large;
+.happy {
+  background-color: lightgoldenrodyellow;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.sad {
+  background-color: lightblue;
+}
+
+.NASA {
+  background-color: lightseagreen;
+}
+
+.generic {
+  background-color: #eee;
 }

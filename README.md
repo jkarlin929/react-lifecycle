@@ -140,7 +140,7 @@ addAnotherMovie() {
 
 ### Let's make another example!
 
-
+I'll be building up to the `widgets-example-begin` app.
 
 ## 🚀 Lab 1
 

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Widget from './components/Widget';
+import ChangeWidget from './components/ChangeWidget';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       type: 'generic',
-    }
+    };
     this.changeType = this.changeType.bind(this);
   }
 
@@ -20,12 +21,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Some {this.state.type} widgets!</h1>
-        <Widget widgetType={this.state.type} />
-        <Widget widgetType={this.state.type} />
-        <Widget widgetType={this.state.type} />
-        <Widget widgetType={this.state.type} />
-
+        <h1>
+          My {this.state.type} widget!
+        </h1>
+        <div className="widget-container">
+          <Widget widgetType={this.state.type} />
+        </div>
+        <div className="widget-buttons">
+          <ChangeWidget changeType={this.changeType} newType={'happy'} />
+          <ChangeWidget changeType={this.changeType} newType={'NASA'} />
+          <ChangeWidget changeType={this.changeType} newType={'sad'} />
+        </div>
       </div>
     );
   }
