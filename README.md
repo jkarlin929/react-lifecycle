@@ -88,6 +88,10 @@ class MovieDiv extends Component {
 
 (Note that we have to use `bind` to preserve the context of `this`.)
 
+#### SIDEBAR: React Events
+
+Take a look at the docs to see a list of all of the events React has access to. You basically have access to all of the same events that the browser DOM gives you. Under the hood, React is taking care of all the `addEventListener()` stuff. We're using `onClick` in this example; we'll talk about some of the others later on.
+
 ### VERY IMPORTANT: How _not_ to update `state`
 
 Never, ever, ever, _ever_ update `state` by saying something like:
