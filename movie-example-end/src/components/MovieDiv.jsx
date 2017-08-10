@@ -36,9 +36,9 @@ class MovieDiv extends Component {
 
   addAnotherMovie() {
     console.log(this.state);
-    const state = { ...this.state };
-    state.title.push(<h2>Back to the Future</h2>);
-    this.setState(state);
+    this.setState(prevState => {
+      title: prevState.concat(<h2>Back to the Future</h2>);
+    })
   }
 
   render() {

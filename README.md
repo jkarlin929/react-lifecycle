@@ -109,24 +109,46 @@ Instead, you **MUST USE** the `setState` method, like we did above.
 this.setState({ title: 'Finding Nemo' });
 ```
 
-We can also take a copy of the state object using _spread syntax_. For example, let's say instead of a string, the `title` property is an array: `[<h2>Star Wars</h2>, <h2>Finding Nemo</h2>]`. We want a new method that will add `Back to the Future` onto this array. In order to do this, we'll do something like this:
+If we want to add items to an array in our state, we can't use `push`, since `push` mutates the original array. Instead, we need to use `concat`, which returns a new array with the new value on the end.
+
+Let's say instead of just a string in our title, we want to have an array of movies:
 
 ```jsx
-addAnotherMovie() {
-  const state = {...this.state};
-  state.title.push(<h2>Back to the Future</h2>);
-  this.setState(state);
+this.state = {
+  title: [<h2>Finding Nemo</h2>]
 }
 
+addAnotherMovie() {
+  this.setState({
+    title: this.state.title.concat(<h2>Back to the Future</h2>);
+  })
+}
 ```
 
-Taking a copy of the object allows us to do what's called _passing by value_ instead of _passing by reference_.
+Note that we also **ABSOLUTELY CANNOT** set a new variable equal to `this.state` and then mutate that object.
 
-![value vs reference](./assets/passbyreference.gif)
+```jsx
+/*  🚨🚨🚨🚨 DO NOT DO THIS!!!!!!! 🚨🚨🚨🚨🚨🚨🚨 */
+const newState = this.state;
+newState.title = [<h2>Finding Nemo</h2>, <h2>Back to the Future</h2>];
+this.setState(newState);
+```
 
-(This is also helpful if you have a complex object in your state.)
+This is because JavaScript doesn't make _copies_ of objects, it makes _references to_ the original object. This is called "passing by reference".
 
-The third way we can update `state` is by passing `setState` a callback function rather than an object. doing this can be helpful if you're running into bugs, since it explicitly references the previous version of the state.
+![pass by reference](./assets/passbyreference.gif).
+
+If we want to accomplish something like this, we would instead have to take a copy of the object using spread syntax:
+
+```jsx
+const newState = { ...this.state };
+newState.title = [<h2>Finding Nemo</h2>, <h2>Back to the Future</h2>];
+this.setState(newState);
+```
+
+...but you shouldn't really do this either, since it's not very performant.
+
+The other way we can update `state` is by passing `setState` a callback function rather than an object. Doing this can be helpful if you're running into bugs, since it explicitly references the previous version of the state.
 
 ```jsx
 addAnotherMovie() {
@@ -178,9 +200,9 @@ class MovieDiv extends Component {
 
   addAnotherMovie() {
     console.log(this.state);
-    const state = { ...this.state };
-    state.title.push(<h2>Back to the Future</h2>);
-    this.setState(state);
+    this.setState(prevState => {
+      title: prevState.concat(<h2>Back to the Future</h2>);
+    })
   }
 
   render() {
