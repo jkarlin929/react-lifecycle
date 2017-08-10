@@ -97,8 +97,11 @@ Take a look at the docs to see a list of all of the events React has access to. 
 Never, ever, ever, _ever_ update `state` by saying something like:
 
 ```js
+/*  🚨🚨🚨🚨 DO NOT DO THIS!!!!!!! 🚨🚨🚨🚨🚨🚨🚨 */
 this.state.title = 'Finding Nemo';
 ```
+
+![boromir](./assets/updating-state.jpg)
 
 Instead, you **MUST USE** the `setState` method, like we did above.
 
