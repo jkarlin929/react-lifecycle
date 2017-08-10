@@ -120,15 +120,20 @@ addAnotherMovie() {
 
 ```
 
+Taking a copy of the object allows us to do what's called _passing by value_ instead of _passing by reference_.
+
+![value vs reference](./assets/passbyreference.gif)
+
 (This is also helpful if you have a complex object in your state.)
 
-The third way we can update `state` is by passing `setState` a callback function rather than an object.
+The third way we can update `state` is by passing `setState` a callback function rather than an object. doing this can be helpful if you're running into bugs, since it explicitly references the previous version of the state.
 
 ```jsx
 addAnotherMovie() {
   this.setState(prevState => {
-    prevState.title.push(<h2>Back to the Future</h2>);
-    return prevState;
+    return {
+      title: prevState.title.concat(<h2>Back to the Future</h2>);
+    }
   })
 }
 ```
