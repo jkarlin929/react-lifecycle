@@ -12,8 +12,7 @@ class App extends Component {
   }
 
   handleInputChange(e) {
-    let newColor = `#${e.target.value}`;
-    newColor.length < 4 ? (newColor = '#fff') : null;
+    const newColor = e.target.value.length < 3 ? '#fff' : `#${e.target.value}`;
     this.setState({
       bgColor: newColor,
     });
@@ -26,7 +25,7 @@ class App extends Component {
           <input
             type="text"
             name="new-color"
-            maxlength="6"
+            maxLength="6"
             onChange={e => this.handleInputChange(e)}
           />
         </div>
