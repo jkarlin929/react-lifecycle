@@ -164,7 +164,7 @@ addAnotherMovie() {
 
 I'll be building up to the `widgets-example-begin` app.
 
-## 🚀 Lab 1 - Color Switcher
+## 🚀 Lab 1 - Color Switcher - 20min
 
 [Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-narwhal/U03-D04-COLOR-DIV-LAB) 
 
@@ -295,7 +295,7 @@ Let's say we wanted to add the NASA pic of the day to our NASA widget. What are 
 - Load the NASA data when the NASA button is clicked and pass it to the child component (`componentDidUpdate`)
 - Load the NASA data in the child component when its prop `widgetType` is `'NASA'` (`componentWillReceiveProps`)
 
-## 🚀 Lab 2 - Start Wars
+## 🚀 Lab 2 - Start Wars - 45min
 
 [Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-narwhal/U03-D04-Star-Wars-LAB)
 
