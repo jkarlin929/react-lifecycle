@@ -295,9 +295,9 @@ Let's say we wanted to add the NASA pic of the day to our NASA widget. What are 
 - Load the NASA data when the NASA button is clicked and pass it to the child component (`componentDidUpdate`)
 - Load the NASA data in the child component when its prop `widgetType` is `'NASA'` (`componentWillReceiveProps`)
 
-## 🚀 Lab 2
+## 🚀 Lab 2 - Start Wars
 
-[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U03_D04_Star-Wars)
+[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-narwhal/U03-D04-Star-Wars-LAB)
 
 You'll be working in pairs again for this, provided by our handy scrambler.
 
