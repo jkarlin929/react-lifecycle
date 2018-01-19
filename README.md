@@ -164,9 +164,9 @@ addAnotherMovie() {
 
 I'll be building up to the `widgets-example-begin` app.
 
-## 🚀 Lab 1
+## 🚀 Lab 1 - Color Switcher
 
-[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-delorean/LAB_U03_D04_Color-Div) 
+[Fork and clone this repo and follow the instructions!](https://git.generalassemb.ly/wdi-nyc-narwhal/U03-D04-COLOR-DIV-LAB) 
 
 You can work in pairs for this one, provided by our handy scrambler.
 
